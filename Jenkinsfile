@@ -10,15 +10,13 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'npm start'
+                npm install
             }
         }
         stage ('deliver'){
             steps{
-                set -x
                 npm run build
                 npm start
-                set +x
             }
         }
     }
