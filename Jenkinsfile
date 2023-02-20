@@ -9,10 +9,12 @@ pipeline {
             }
         }
         stage ('deliver'){
-            set -x
-            npm run build
-            npm start
-            set +x
+            steps{
+                set -x
+                npm run build
+                npm start
+                set +x
+            }
         }
     }
 }
